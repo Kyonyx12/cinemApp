@@ -1,0 +1,15 @@
+.card {
+  height: 220px;
+  width: 120px;
+  border: solid #fff 1px;
+  margin: 2px;
+  color: #ffffff;
+  background-color: #00000075;
+}
+.crew {
+  margin-left: 2.5rem;
+}
+.name {
+  padding-left: 4px;
+  padding-right: 2px;
+}

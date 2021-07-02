@@ -1,0 +1,22 @@
+.slider {
+  background-color: #ffffff10;
+  padding-top: 4px;
+}
+
+.item {
+  margin-left: 1rem;
+  min-width: 150px;
+  max-width: 150px;
+
+  transition: all ease 200ms;
+  cursor: pointer;
+  filter: brightness(0.9);
+}
+.item:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.title {
+  font-size: medium;
+}

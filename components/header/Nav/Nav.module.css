@@ -1,0 +1,46 @@
+.nav {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+
+  width: 100%;
+  padding: 0 2.5rem 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #ffffff99;
+  background-color: #00000060;
+}
+.nav h1 {
+  font-weight: bold;
+  color: #15c6b2;
+}
+.routes {
+  width: 300px;
+}
+.ul {
+  display: flex;
+  justify-content: space-between;
+}
+.ul a {
+  font-weight: 600;
+
+  color: #fff;
+}
+
+.tools {
+  display: flex;
+}
+.toolBg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 30px;
+  width: 30px;
+
+  border-radius: 50px;
+
+  cursor: pointer;
+}
