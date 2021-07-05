@@ -1,0 +1,97 @@
+.nav {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+
+  width: 100%;
+  padding: 0 2.5rem 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #ffffff99;
+  background-color: #00000060;
+}
+.nav h1 {
+  font-weight: bold;
+  color: #15c6b2;
+}
+.routes {
+  width: 300px;
+}
+.burger {
+  display: none;
+  height: 2.5rem;
+
+  cursor: pointer;
+}
+.burgerMenu {
+  display: none;
+  top: 40px;
+  width: 100%;
+
+  position: fixed;
+  z-index: 3;
+
+  background-color: #00000060;
+}
+.burgerMenuLayout {
+  display: flex;
+  justify-content: space-around;
+}
+.ul {
+  display: flex;
+  justify-content: space-between;
+}
+.ul a {
+  font-weight: 600;
+
+  color: #fff;
+}
+
+.tools {
+  display: flex;
+}
+.search {
+  position: relative;
+  width: 200px;
+  top: 1px;
+  left: 28px;
+  border-radius: 4px;
+  border-style: none;
+
+  height: 26px;
+}
+.toolBg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 30px;
+  width: 30px;
+
+  border-radius: 50px;
+  z-index: 4;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .nav {
+    padding: 0 1rem 0 1rem;
+  }
+  .nav h1 {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .burgerMenu {
+    display: block;
+  }
+  .routes {
+    display: none;
+  }
+  .search {
+    width: 60vw;
+  }
+}

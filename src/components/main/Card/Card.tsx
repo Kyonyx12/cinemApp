@@ -11,17 +11,26 @@ const Card: React.FC<{ member: any }> = (props) => {
       </div>
     );
   }
+
   return (
     <div className={styles.card}>
       <div>
         <Image
-          src={`https://image.tmdb.org/t/p/original${props.member.profile_path}`}
+          src={
+            props.member.profile_path
+              ? `https://image.tmdb.org/t/p/original${props.member.profile_path}`
+              : `${
+                  props.member.gender === 1
+                    ? "/assets/unknown-female.png"
+                    : "/assets/unknown-male.png"
+                }`
+          }
           alt=""
           height="150px"
           width="120px"
         />
       </div>
-      <div className={styles.name}>
+      <div>
         <h4>{props.member.name}</h4>
       </div>
     </div>

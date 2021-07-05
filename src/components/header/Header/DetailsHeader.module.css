@@ -1,15 +1,31 @@
 .hero {
   position: absolute;
   z-index: -1;
-
-  transform: translateY(-90px);
+  background-color: red;
+  height: 100vh;
+  width: 100%;
 }
 .infoContainer {
-  height: 58vh;
-  padding: 3rem 0 0 7.5rem;
+  height: 100vh;
+  padding-top: 5rem;
+
+  display: flex;
+  justify-content: center;
+  background-color: #00000050;
 }
+
+.poster {
+  margin-right: 2.5rem;
+
+  border: solid 2px #ffffff;
+  box-shadow: 4px 4px 4px 0 #15c6b2;
+  height: 568px;
+  width: 400px;
+}
+
 .title {
-  font-size: 4rem;
+  font-size: 3rem;
+  max-width: 30ch;
   margin-block-start: 0;
   margin-block-end: 0;
 }
@@ -57,10 +73,30 @@
   border-radius: 4px;
   background-color: #00000010;
 }
+.sipnopsisContainer {
+  height: 120px;
+}
 .sipnopsis {
   max-width: inherit;
 
   font-weight: bold;
   letter-spacing: 1px;
   margin: 0.24rem;
+}
+.credits {
+  display: flex;
+  flex-wrap: wrap;
+  width: 46vw;
+  justify-content: center;
+}
+.creditsMd {
+  display: none;
+}
+@media (max-width: 1160px) {
+  .credits {
+    display: none;
+  }
+  .creditsMd {
+    display: flex;
+  }
 }

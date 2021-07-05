@@ -9,16 +9,10 @@ import {
   MdStarBorder,
 } from "react-icons/md";
 import styles from "./Header.module.css";
+import { Featured } from "../../../../util/tools/models";
 
 const Header: React.FC<{
-  featured: {
-    title: string;
-    name: string;
-    backdrop_path: string;
-    overview: string;
-    vote_average: number;
-    featuredGenres: string[];
-  };
+  featured: Featured;
 }> = (props) => {
   const { backdrop_path, title, name, overview, vote_average, featuredGenres } =
     props.featured;
@@ -81,10 +75,10 @@ const Header: React.FC<{
         </div>
         <div className={styles.actions}>
           <div className={styles.infoBg}>
-            <MdInfoOutline size="2rem" />
+            <MdInfoOutline size="1.75rem" />
           </div>
           <div className={styles.favoriteBg}>
-            <MdFavoriteBorder size="2rem" />
+            <MdFavoriteBorder size="1.75rem" />
           </div>
         </div>
         <div className={styles.sipnopsisBg}>

@@ -10,18 +10,10 @@ import {
 } from "react-icons/md";
 import styles from "./DetailsHeader.module.css";
 import Card from "../../main/Card/Card";
+import { FeaturedSpecial } from "../../../../util/tools/models";
 
-const Header: React.FC<{
-  featured: {
-    title: string;
-    name: string;
-    backdrop_path: string;
-    overview: string;
-    vote_average: number;
-    featuredGenres: string[];
-    poster_path: string;
-    credits: any;
-  };
+const DetailsHeader: React.FC<{
+  featured: FeaturedSpecial;
 }> = (props) => {
   const {
     backdrop_path,
@@ -54,13 +46,16 @@ const Header: React.FC<{
   generateStars();
 
   return (
-    <header className={styles.header}>
+    <header>
       <div className={styles.hero}>
         <Image
-          src={`https://image.tmdb.org/t/p/original/${backdrop_path}`}
+          src={`${
+            backdrop_path
+              ? `https://image.tmdb.org/t/p/original/${backdrop_path}`
+              : "/assets/backdrop-default.png"
+          }`}
           alt="title"
-          height="1440"
-          width="2560"
+          layout="fill"
         />
       </div>
       <div className={styles.infoContainer}>
@@ -72,7 +67,7 @@ const Header: React.FC<{
             width="400"
           />
         </div>
-        <div>
+        <div className={styles.info}>
           <h2 className={styles.title}>{title ? title : name}</h2>
           {totalStars !== 0 ? (
             <div>
@@ -125,7 +120,17 @@ const Header: React.FC<{
           <div className={styles.credits}>
             {cast
               .map((member: any) => <Card member={member} key={member.id} />)
-              .slice(0, 5)}
+              .slice(0, 4)}
+          </div>
+          <div className={styles.creditsMd}>
+            {crew
+              .map((member: any) => <Card member={member} key={member.id} />)
+              .slice(0, 2)}
+          </div>
+          <div className={styles.creditsMd}>
+            {cast
+              .map((member: any) => <Card member={member} key={member.id} />)
+              .slice(0, 4)}
           </div>
         </div>
       </div>
@@ -133,4 +138,4 @@ const Header: React.FC<{
   );
 };
 
-export default Header;
+export default DetailsHeader;

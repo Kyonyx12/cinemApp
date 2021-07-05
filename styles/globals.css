@@ -6,10 +6,15 @@ body {
   margin: 0;
   font-family: "Karla", sans-serif;
   z-index: 0;
-  background-color: #00000050;
+  background-color: #000000;
   color: #ffffff;
 }
-
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
 ul {
   list-style-type: none;
   margin-block-start: 0;
@@ -18,7 +23,7 @@ ul {
 }
 
 a {
-  color: red;
+  color: white;
   text-decoration: none;
 }
 
@@ -36,15 +41,55 @@ hr {
   border: 0;
   background-color: #15c6b2;
 }
+.container {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: #00000050;
+}
 .main {
-  box-shadow: 0 -50px 75px 75px#000000;
+  box-shadow: 0 -50px 20px 150px#171717;
+  background-color: #171717;
+}
 
-  background-color: #000000;
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 5rem;
+}
+.not-found {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 280px;
+  width: 240px;
+  border: solid 2px #ffffff;
+  box-shadow: 4px 4px 4px 0 #15c6b299;
+
+  margin: 1rem;
+
+  transition: all ease 200ms;
+  cursor: pointer;
+  filter: brightness(0.9);
+}
+.result:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
 }
 .h3 {
   font-size: 1.17em;
   margin-block-start: 0;
   margin-block-end: 0;
-  background-color: #ffffff10;
+  background-color: #00000050;
   padding: 1rem;
 }

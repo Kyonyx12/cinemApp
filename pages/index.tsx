@@ -1,22 +1,31 @@
-import Slider from "../components/main/Slider/Slider";
-import Header from "../components/header/Header/Header";
-import { key } from "../tools/keys";
-import { getData, getGenres, hasGenre } from "../tools/helpers";
-import Footer from "../components/footer/Footer";
+import React from "react";
+
+import { getData, getGenres, hasGenre } from "../util/tools/helpers";
+import Header from "../src/components/header/Header/Header";
+import Slider from "../src/components/main/Slider/Slider";
+import Footer from "../src/components/footer/Footer";
+import { key } from "../util/tools/keys";
+import { Genres, Media, Special } from "../util/tools/models";
 
 const Home: React.FC<{
-  data: any;
-  genres: { id: number; name: string }[];
+  data: {
+    popularM: Media;
+    popularTv: Media;
+    trending: Special;
+    topRatedM: Media;
+    topRatedTv: Media;
+  };
+  genres: Genres;
 }> = (props) => {
   const featuredGenres = hasGenre(
     props.genres,
     props.data.trending[0].genre_ids
   );
-  console.log(props.data.popularTv);
+
   return (
-    <div>
+    <>
       <Header featured={{ ...props.data.trending[0], featuredGenres }} />
-      <div>
+      <div className="header-slider">
         <h3 className="h3">Trending</h3>
         <Slider data={props.data.trending} route={undefined} />
       </div>
@@ -43,7 +52,7 @@ const Home: React.FC<{
         </div>
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 

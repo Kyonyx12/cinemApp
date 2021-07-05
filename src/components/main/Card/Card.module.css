@@ -1,15 +1,15 @@
 .card {
   height: 220px;
   width: 120px;
-  border: solid #fff 1px;
   margin: 2px;
   color: #ffffff;
   background-color: #00000075;
+
+  border: solid 2px #ffffff;
+  box-shadow: 2px 2px 2px 0 #15c6b299;
+
+  text-align: center;
 }
 .crew {
   margin-left: 2.5rem;
-}
-.name {
-  padding-left: 4px;
-  padding-right: 2px;
 }

@@ -1,24 +1,14 @@
 .hero {
   position: absolute;
   z-index: -1;
-
-  transform: translateY(-70px);
 }
 .infoContainer {
-  height: 96vh;
-  padding-top: 3rem;
-
-  display: flex;
-  justify-content: center;
+  height: 60vh;
+  padding: 5rem 0 0 5vw;
+  background-color: #00000050;
 }
-
-.poster {
-  margin-right: 2.5rem;
-  border-radius: 4px;
-}
-
 .title {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-block-start: 0;
   margin-block-end: 0;
 }
@@ -64,10 +54,6 @@
 .sipnopsisBg {
   max-width: 70ch;
   border-radius: 4px;
-  background-color: #00000010;
-}
-.sipnopsisContainer {
-  height: 120px;
 }
 .sipnopsis {
   max-width: inherit;
@@ -76,9 +62,22 @@
   letter-spacing: 1px;
   margin: 0.24rem;
 }
-.credits {
-  display: flex;
-  flex-wrap: wrap;
-  width: 46vw;
-  justify-content: center;
+
+@media (max-width: 926px) {
+  .infoContainer {
+    height: 40vh;
+    padding-left: 2vw;
+    padding-top: 10vh;
+  }
+  .sipnopsisBg {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  .categories {
+    font-size: 0.9rem;
+  }
 }

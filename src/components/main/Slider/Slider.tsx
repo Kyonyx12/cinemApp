@@ -33,7 +33,7 @@ const Slider: React.FC<{
       items: 2,
     },
   };
-  console.log(props.route);
+
   return (
     <Carousel
       responsive={responsive}
@@ -42,7 +42,7 @@ const Slider: React.FC<{
       sliderClass={styles.slider}
     >
       {props.data.map((item) => {
-        console.log(item);
+        if (!item.poster_path) return;
         return (
           <Link
             href={`${
@@ -53,16 +53,13 @@ const Slider: React.FC<{
             key={item.id}
             passHref
           >
-            <div>
+            <div className={styles.img}>
               <Image
                 src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
                 alt="some-alt"
                 height="200"
                 width="160"
               />
-              <p className={styles.title}>
-                {item.title ? item.title : item.name}
-              </p>
             </div>
           </Link>
         );

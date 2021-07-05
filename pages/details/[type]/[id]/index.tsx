@@ -1,9 +1,9 @@
 import React from "react";
-import { key } from "../../../../tools/keys";
-import Image from "next/image";
-import { getData, getGenres } from "../../../../tools/helpers";
-import DetailsHeader from "../../../../components/header/Header/DetailsHeader";
-import Footer from "../../../../components/footer/Footer";
+
+import DetailsHeader from "../../../../src/components/header/Header/DetailsHeader";
+import Footer from "../../../../src/components/footer/Footer";
+import { getData } from "../../../../util/tools/helpers";
+import { key } from "../../../../util/tools/keys";
 
 const Details: React.FC<{ data: any }> = (props) => {
   const featuredGenres = props.data.genres.map(
@@ -11,11 +11,10 @@ const Details: React.FC<{ data: any }> = (props) => {
   );
 
   return (
-    <div>
+    <>
       <DetailsHeader featured={{ ...props.data, featuredGenres }} />
-      <main className="main"></main>
       <Footer />
-    </div>
+    </>
   );
 };
 
@@ -33,6 +32,6 @@ export const getServerSideProps = async (context: {
   const credits = await getData(
     `https://api.themoviedb.org/3/${type}/${id}/credits?api_key=${key}`
   );
-
+  console.log(data);
   return { props: { data: { ...data, credits } } };
 };

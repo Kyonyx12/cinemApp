@@ -1,13 +1,14 @@
-import Slider from "../../components/main/Slider/Slider";
-import Header from "../../components/header/Header/Header";
-import { getData, getGenres, hasGenre } from "../../tools/helpers";
-import { key } from "../../tools/keys";
+import Slider from "../../src/components/main/Slider/Slider";
+import Header from "../../src/components/header/Header/Header";
+import { getData, getGenres, hasGenre } from "../../util/tools/helpers";
+import Footer from "../../src/components/footer/Footer";
+import { key } from "../../util/tools/keys";
 import { useRouter } from "next/router";
-import Footer from "../../components/footer/Footer";
+import { Genres, Media, Special } from "../../util/tools/models";
 
 const Route: React.FC<{
-  data: any;
-  genres: { id: number; name: string }[];
+  data: { principal: Special; popular: Media; playing: Media; topRated: Media };
+  genres: Genres;
 }> = (props) => {
   const router = useRouter();
   const route = router.query.routes;
@@ -18,7 +19,7 @@ const Route: React.FC<{
   );
 
   return (
-    <div>
+    <>
       <Header featured={{ ...props.data.principal[2], featuredGenres }} />
       <div>
         <h3 className="h3">Hot</h3>
@@ -54,7 +55,7 @@ const Route: React.FC<{
         </div>
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 
