@@ -47,7 +47,6 @@ const Results: React.FC<{ data: any }> = (props) => {
           })}
         </div>
       </main>
-      <Footer />
     </>
   );
 };

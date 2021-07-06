@@ -54,7 +54,6 @@ const Route: React.FC<{
           />
         </div>
       </main>
-      <Footer />
     </>
   );
 };

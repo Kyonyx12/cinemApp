@@ -54,7 +54,7 @@ const DetailsHeader: React.FC<{
               ? `https://image.tmdb.org/t/p/original/${backdrop_path}`
               : "/assets/backdrop-default.png"
           }`}
-          alt="title"
+          alt={title ? title : name}
           layout="fill"
         />
       </div>
@@ -62,9 +62,10 @@ const DetailsHeader: React.FC<{
         <div className={styles.poster}>
           <Image
             src={`https://image.tmdb.org/t/p/original/${poster_path}`}
-            alt="title"
-            height="570"
-            width="400"
+            alt={title ? title : name}
+            className={styles.poster}
+            height="568px"
+            width="400px"
           />
         </div>
         <div className={styles.info}>

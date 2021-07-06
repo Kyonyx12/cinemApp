@@ -13,7 +13,6 @@ const Details: React.FC<{ data: any }> = (props) => {
   return (
     <>
       <DetailsHeader featured={{ ...props.data, featuredGenres }} />
-      <Footer />
     </>
   );
 };

@@ -93,3 +93,13 @@ hr {
   background-color: #00000050;
   padding: 1rem;
 }
+
+/*Carrousel defaults*/
+
+.react-multiple-carousel__arrow {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+.react-multiple-carousel__arrow::before {
+  color: #000000 !important ;
+  display: block;
+}

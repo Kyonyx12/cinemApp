@@ -53,11 +53,12 @@ export default function Nav() {
           <ul className={styles.tools}>
             <form onSubmit={(e) => handleSearch(e)}>
               <input type="search" className={styles.search} ref={searchRef} />
+              <button className={styles.searchIcon}>
+                <span>
+                  <BiSearchAlt size="1.75rem" color="#15c6b2" />
+                </span>
+              </button>
             </form>
-            <li className={styles.toolBg}>
-              <BiSearchAlt size="1.75rem" color="#15c6b2" />
-            </li>
-
             <li className={styles.toolBg}>
               <BiUserCircle size="1.75rem" color="#15c6b2" />
             </li>

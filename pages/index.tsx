@@ -51,7 +51,6 @@ const Home: React.FC<{
           <Slider data={props.data.topRatedTv} route="/tv" />
         </div>
       </main>
-      <Footer />
     </>
   );
 };
