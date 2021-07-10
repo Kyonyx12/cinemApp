@@ -3,7 +3,6 @@ import React from "react";
 import { getData, getGenres, hasGenre } from "../util/tools/helpers";
 import Header from "../src/components/header/Header/Header";
 import Slider from "../src/components/main/Slider/Slider";
-import Footer from "../src/components/footer/Footer";
 import { key } from "../util/tools/keys";
 import { Genres, Media, Special } from "../util/tools/models";
 

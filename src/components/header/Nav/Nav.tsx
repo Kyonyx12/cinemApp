@@ -60,7 +60,11 @@ export default function Nav() {
               </button>
             </form>
             <li className={styles.toolBg}>
-              <BiUserCircle size="1.75rem" color="#15c6b2" />
+              <Link href={`/user/${"id"}`} passHref>
+                <span>
+                  <BiUserCircle size="1.75rem" color="#15c6b2" />
+                </span>
+              </Link>
             </li>
           </ul>
         </div>
